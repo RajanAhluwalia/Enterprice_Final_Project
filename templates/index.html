@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+    <title>Check the Results</title>
+<style>
+body{
+	background-color:#fddede;
+	margin:auto;
+	text-align: center;
+	}
+input[type='submit']{
+	background-color: brown;
+	color: #fff;
+	padding: 15px 25px;
+	margin-top: 50px;
+	border-radius: 10px;
+	font-size: 18px;
+	}
+</style>
+
+<body>
+
+    <h1>Check the Results</h1>
+    <form method=post enctype=multipart/form-data>
+      <b> <label for="Enter/type the email">Enter the Suspecious Email :--  </label> <b> 
+  	<input type="text" id="w3mission" rows="4" cols="70" name="msg" required/>
+
+	<br><br>
+ 
+      <input  type="submit" id="submit" name="submit" value="Submit Code">
+
+
+<!--<script>
+
+function myFunction() {
+  var txt;
+  var r = confirm("Press a button!");
+  if (r == true) {
+    txt = "You pressed OK!";
+  } else {
+    txt = "You pressed Cancel!";
+  }
+  code=document.getElementById("submit").innerHTML = txt;
+}
+</script>-->
+
+<h1> Email analyse </h1>
+
+{% with messages = get_flashed_messages() %}
+	{% if messages %}
+		{% for message in messages %}
+			<script>
+				alert(`{{message}}`);
+			</script>
+			
+		{% endfor %}
+	{% endif %}
+{% endwith %}
+
+</form>
+
+</body>
+</html>
